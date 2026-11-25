@@ -1,0 +1,135 @@
+@import "tailwindcss";
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #080b1c;
+  color: white;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+::selection {
+  background: #9333ea;
+  color: white;
+}
+
+section {
+  scroll-margin-top: 96px;
+}
+
+.hero-3d {
+  perspective: 1000px;
+}
+
+.hero-avatar {
+  overflow: visible;
+  transform-style: preserve-3d;
+}
+
+.hero-ring {
+  transform-origin: center;
+  animation: ring-spin 12s linear infinite;
+  box-shadow: 0 0 24px rgba(168, 85, 247, 0.18);
+  pointer-events: none;
+}
+
+.project-card,
+.skill-card {
+  transform: perspective(900px) translateZ(0);
+  transform-style: preserve-3d;
+  box-shadow: 0 16px 30px rgba(3, 7, 18, 0.22);
+}
+
+.skill-mark {
+  display: flex;
+  height: 58px;
+  width: 58px;
+  align-items: center;
+  justify-content: center;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 16px;
+  backdrop-filter: blur(8px);
+  box-shadow:
+    0 8px 20px rgba(3, 7, 18, 0.3),
+    inset 0 0 18px rgba(255, 255, 255, 0.04);
+  transition: transform 300ms ease, border-color 300ms ease, box-shadow 300ms ease;
+}
+
+.skills-glow {
+  position: absolute;
+  width: 280px;
+  height: 280px;
+  border-radius: 9999px;
+  filter: blur(100px);
+  opacity: 0.12;
+  pointer-events: none;
+}
+
+.skills-glow-left {
+  left: -140px;
+  top: 25%;
+  background: #9333ea;
+}
+
+.skills-glow-right {
+  right: -140px;
+  bottom: 10%;
+  background: #2563eb;
+}
+
+.skill-card-shine {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(168, 85, 247, 0.12),
+    transparent 42%
+  );
+  opacity: 0;
+  transition: opacity 300ms ease;
+  pointer-events: none;
+}
+
+.skill-card:hover .skill-card-shine {
+  opacity: 1;
+}
+
+.skill-card:hover .skill-mark {
+  transform: translateY(-4px) rotate(-3deg) scale(1.08);
+}
+
+.project-card:hover,
+.skill-card:hover {
+  transform: perspective(900px) translateY(-10px) rotateX(3deg) rotateY(-3deg) translateZ(18px);
+  box-shadow:
+    18px 24px 45px rgba(3, 7, 18, 0.4),
+    0 20px 40px rgba(147, 51, 234, 0.14);
+}
+
+@keyframes ring-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-avatar,
+  .project-card,
+  .skill-card {
+    animation: none;
+    transition: none;
+  }
+}
+
+
+
