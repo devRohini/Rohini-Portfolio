@@ -26,15 +26,15 @@ const certificates = [
 
 function Certificates() {
   return (
-    <section id="certificates" className="bg-[#0b1024] px-6 py-24 text-white">
+    <section id="certificates" className="bg-[#080b1c] px-4 py-16 text-white sm:px-6 md:py-24">
       <div className="mx-auto max-w-6xl">
        
 
-        <h2 className="mb-14 mt-3 text-center text-4xl font-bold">
+        <h2 className="mb-10 mt-2 text-center text-3xl font-bold sm:text-4xl md:mb-14 md:mt-3">
           My <span className="text-purple-400">Achievements</span>
         </h2>
 
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-5 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3">
           {certificates.map((certificate) => (
             <div
               key={certificate.title}
@@ -45,12 +45,12 @@ function Certificates() {
                 alt={certificate.title}
                 className="aspect-4/3 w-full object-cover"
               />
-              <div className="flex items-center gap-4 p-6">
-                <i className={`${certificate.icon} text-3xl text-purple-400`}></i>
+              <div className="flex items-center gap-3.5 p-5 sm:gap-4 sm:p-6">
+                <i className={`${certificate.icon} shrink-0 text-2xl text-purple-400 sm:text-3xl`}></i>
 
-                <div>
-                  <h3 className="text-lg font-bold">{certificate.title}</h3>
-                  <p className="mt-1 text-gray-400">{certificate.organization}</p>
+                <div className="min-w-0">
+                  <h3 className="text-base font-bold sm:text-lg">{certificate.title}</h3>
+                  <p className="mt-1 text-sm text-gray-400 sm:text-base">{certificate.organization}</p>
                 </div>
               </div>
             </div>

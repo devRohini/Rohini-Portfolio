@@ -1,6 +1,7 @@
 @import "tailwindcss";
 html {
   scroll-behavior: smooth;
+  overflow-x: clip;
 }
 
 body {
@@ -8,6 +9,11 @@ body {
   font-family: Arial, sans-serif;
   background: #080b1c;
   color: white;
+  overflow-x: clip;
+}
+
+.brand-logo {
+  font-family: "Pacifico", "Segoe Script", "Brush Script MT", cursive;
 }
 
 * {
@@ -34,8 +40,31 @@ section {
 
 .hero-ring {
   transform-origin: center;
-  animation: ring-spin 12s linear infinite;
-  box-shadow: 0 0 24px rgba(168, 85, 247, 0.18);
+  background: conic-gradient(
+    from 0deg,
+    rgba(168, 85, 247, 0.9),
+    rgba(99, 102, 241, 0.45),
+    rgba(56, 189, 248, 0.8),
+    rgba(168, 85, 247, 0.12),
+    rgba(168, 85, 247, 0.9)
+  );
+  -webkit-mask: radial-gradient(
+    farthest-side,
+    transparent calc(100% - 3px),
+    #000 calc(100% - 2px)
+  );
+  mask: radial-gradient(
+    farthest-side,
+    transparent calc(100% - 3px),
+    #000 calc(100% - 2px)
+  );
+  animation: ring-spin 10s linear infinite;
+  pointer-events: none;
+}
+
+.hero-ring-outer {
+  transform-origin: center;
+  animation: ring-spin 22s linear infinite reverse;
   pointer-events: none;
 }
 
@@ -48,18 +77,26 @@ section {
 
 .skill-mark {
   display: flex;
-  height: 58px;
-  width: 58px;
+  height: 48px;
+  width: 48px;
   align-items: center;
   justify-content: center;
   border-width: 1px;
   border-style: solid;
-  border-radius: 16px;
+  border-radius: 14px;
   backdrop-filter: blur(8px);
   box-shadow:
     0 8px 20px rgba(3, 7, 18, 0.3),
     inset 0 0 18px rgba(255, 255, 255, 0.04);
   transition: transform 300ms ease, border-color 300ms ease, box-shadow 300ms ease;
+}
+
+@media (min-width: 640px) {
+  .skill-mark {
+    height: 58px;
+    width: 58px;
+    border-radius: 16px;
+  }
 }
 
 .skills-glow {
@@ -97,20 +134,22 @@ section {
   pointer-events: none;
 }
 
-.skill-card:hover .skill-card-shine {
-  opacity: 1;
-}
+@media (hover: hover) {
+  .skill-card:hover .skill-card-shine {
+    opacity: 1;
+  }
 
-.skill-card:hover .skill-mark {
-  transform: translateY(-4px) rotate(-3deg) scale(1.08);
-}
+  .skill-card:hover .skill-mark {
+    transform: translateY(-4px) rotate(-3deg) scale(1.08);
+  }
 
-.project-card:hover,
-.skill-card:hover {
-  transform: perspective(900px) translateY(-10px) rotateX(3deg) rotateY(-3deg) translateZ(18px);
-  box-shadow:
-    18px 24px 45px rgba(3, 7, 18, 0.4),
-    0 20px 40px rgba(147, 51, 234, 0.14);
+  .project-card:hover,
+  .skill-card:hover {
+    transform: perspective(900px) translateY(-10px) rotateX(3deg) rotateY(-3deg) translateZ(18px);
+    box-shadow:
+      18px 24px 45px rgba(3, 7, 18, 0.4),
+      0 20px 40px rgba(147, 51, 234, 0.14);
+  }
 }
 
 @keyframes ring-spin {
@@ -124,6 +163,8 @@ section {
 
 @media (prefers-reduced-motion: reduce) {
   .hero-avatar,
+  .hero-ring,
+  .hero-ring-outer,
   .project-card,
   .skill-card {
     animation: none;

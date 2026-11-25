@@ -84,3 +84,37 @@ export const certificates = [
     organization: "MSBSVET",
   },
 ];
+
+export const experiences = [
+ {
+  role: "Lab Assistant Intern",
+  company: "MKCLS Learning Centre – Padmavati Infotech",
+  duration: "June 2024 - July 2024",
+  type: "Internship",
+  points: [
+    "Assisted in managing computer laboratory operations and maintaining computer systems.",
+    "Provided technical support to students for hardware, software, and basic computer-related issues.",
+    "Helped with software installation, system configuration, and troubleshooting.",
+    "Maintained lab equipment and ensured computers were ready for practical sessions.",
+  ],
+  tech: [
+    "Computer Hardware",
+    "MS Office",
+    "Software Installation",
+    "Troubleshooting",
+    "Basic Networking",
+  ],
+},
+  {
+    role: "Junior Software Developer Trainee",
+    company: "ILA Hiring Technologies",
+    duration: "May 2025 - Nov 2025",
+    type: "Training & Internship",
+    points: [
+      "Completed hands-on full stack web development training covering HTML, CSS, JavaScript, Tailwind CSS, and React.js , MongoDB as part of the MSBSVET Skill Development Program.",
+      "Designed and built interactive portfolio, coffee shop, gifting, and travel agency web projects.",
+      "Collaborated using Git workflows and practiced clean, maintainable component-based code.",
+    ],
+    tech: ["HTML", "CSS", "JavaScript", "Express.js", "Git" ,"Node.js", "React.js", "Tailwind CSS", "Mongodb"],
+  },
+];

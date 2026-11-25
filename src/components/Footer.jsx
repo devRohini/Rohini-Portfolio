@@ -1,7 +1,7 @@
 
 function Footer() {
   return (
-    <footer className="border-t border-white/10 bg-[#080b1c] px-6 py-8 text-center text-gray-400">
+    <footer className="border-t border-white/10 bg-[#080b1c] px-4 py-6 text-center text-gray-400 sm:px-6 sm:py-8">
 
 
       <p className="mt-2 text-sm">

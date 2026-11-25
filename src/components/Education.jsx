@@ -10,10 +10,10 @@ const education = [
 
 function Education() {
   return (
-    <section id="education" className="bg-[#080b1c] px-6 py-24 text-white">
+    <section id="education" className="bg-[#0b1024] px-4 py-16 text-white sm:px-6 md:py-24">
       <div className="mx-auto max-w-4xl">
 
-        <h2 className="mb-14 mt-3 text-center text-4xl font-bold">
+        <h2 className="mb-10 mt-2 text-center text-3xl font-bold sm:text-4xl md:mb-14 md:mt-3">
           My Education <span className="text-purple-400">Background</span>
         </h2>
 
@@ -21,18 +21,24 @@ function Education() {
           {education.map((item) => (
             <div
               key={item.degree}
-              className="rounded-2xl border border-white/10 bg-white/3 p-7"
+              className="rounded-2xl border border-white/10 bg-white/3 p-5 sm:p-7"
             >
-              <div className="flex gap-5">
-                <i className="bi bi-mortarboard-fill text-3xl text-purple-400"></i>
+              <div className="flex items-start gap-4 sm:gap-5">
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-purple-500/10 sm:h-14 sm:w-14">
+                  <i className="bi bi-mortarboard-fill text-2xl text-purple-400 sm:text-3xl"></i>
+                </div>
 
-                <div>
-                  <h3 className="text-xl font-bold">{item.degree}</h3>
-                  <p className="mt-2 text-gray-400">{item.institute}</p>
-                  <p className="mt-2 text-sm text-purple-400">{item.year}</p>
-                  <p className="mt-2 text-sm text-purple-400">
-                    CGPA: {item.CGPA}
-                  </p>
+                <div className="min-w-0">
+                  <h3 className="text-lg font-bold sm:text-xl">{item.degree}</h3>
+                  <p className="mt-1.5 text-sm text-gray-400 sm:mt-2 sm:text-base">{item.institute}</p>
+                  <div className="mt-3 flex flex-wrap gap-2.5">
+                    <span className="rounded-full border border-purple-500/20 bg-purple-500/10 px-3 py-1 text-xs font-medium text-purple-300 sm:text-sm">
+                      {item.year}
+                    </span>
+                    <span className="rounded-full border border-purple-500/20 bg-purple-500/10 px-3 py-1 text-xs font-medium text-purple-300 sm:text-sm">
+                      CGPA: {item.CGPA}
+                    </span>
+                  </div>
                 </div>
               </div>
             </div>

@@ -236,7 +236,7 @@ function SkillIcon({ skill }) {
 
   return (
     <div
-      className={`skill-mark mb-4 border-white/15 bg-white/[0.04] shadow-lg ${
+      className={`skill-mark mb-3 border-white/15 bg-white/[0.04] shadow-lg sm:mb-4 [&>svg]:scale-85 sm:[&>svg]:scale-100 ${
         config?.glow || "group-hover:border-purple-400/50"
       }`}
     >
